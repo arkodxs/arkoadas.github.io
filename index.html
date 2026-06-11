@@ -14,25 +14,270 @@
   </head>
   <body>
     <main class="page">
-      <section id="hero" class="section">
-        <h1>Hero</h1>
+      <section id="hero" class="section hero">
+        <h1 class="hero-name">Arko Das</h1>
+        <p class="hero-subtitle">MEng Chemical Engineering at UCL | Hydrogen &amp; Clean Energy | Process Design</p>
+        <p class="hero-links">
+          <a href="https://www.linkedin.com/in/arkoadas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/arkodxs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:arko.a.das@gmail.com">arko.a.das@gmail.com</a>
+        </p>
       </section>
 
       <section id="about" class="section">
         <h2>About</h2>
+        <p class="section-secondary-text">
+          Third-year MEng Chemical Engineering at UCL. I characterise hydrogen fuel cell systems for UCL Racing, design green chemical processes, and build data tools - sometimes all in the same week. I care about the people side of engineering as much as the technical side, which is why I run events and infrastructure for the Ramsay Society alongside the lab work.
+        </p>
       </section>
 
       <section id="projects" class="section">
         <h2>Projects</h2>
+        <div class="project-grid">
+          <article class="project-card project-card--wide project-card--ecothon">
+            <h3 class="project-card-title">SO₂ Emissions Abatement - Aramco Ecothon 2026</h3>
+            <p class="project-card-description">
+              Led the process design of a modular electrochemical process converting industrial SO₂ emissions into green hydrogen and potassium sulphate fertiliser in a 3-day competition. The core innovation exploits SO₂ as a depolariser, reducing the electrolyser cell potential from 1.23V (water splitting) to 0.17V, dramatically reducing energy demand relative to conventional water electrolysis. The team's techno-economic model techno-economic model projected £18M NPV and 17% ROI. Won 1st place at the Aramco Ecothon, competing against 15 teams.
+            </p>
+            <p class="project-card-caption">Hover over each block's name to see the engineering decisions behind it.</p>
+
+            <div class="diagram-wrap">
+              <div id="bfd-inline" class="bfd-inline" aria-label="Aramco BFD diagram"></div>
+            </div>
+            
+            <a href="ecothon-presentation.pdf" target="_blank" class="cv-download-link">View Presentation</a>
+
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">Electrochemistry</span>
+              <span class="project-tag">Techno-Economic Analysis</span>
+              <span class="project-tag">Process Design</span>
+              <span class="project-tag">Python</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card-title">Hydrogen Fuel Cell Characterisation - UCL Racing</h3>
+            <p class="project-card-description">
+              Hydrogen systems engineer for UCL Racing's Shell Eco-marathon team, working on a Horizon H-200 PEM fuel cell stack. Characterised hydrogen utilisation efficiency across operating conditions, ran sensitivity analyses on controllable system parameters, and improved overall system efficiency by 23%. Part of the first UK team to complete the Shell Hypermile hydrogen fuel cell challenge, scoring 364 km/m³ and placing 1st in Carbon Footprint.
+            </p>
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">MATLAB</span>
+              <span class="project-tag">Hydrogen</span>
+              <span class="project-tag">PEM Fuel Cells</span>
+              <span class="project-tag">Experimental</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card-title">Green Ammonia Process Design - UCL Capstone</h3>
+            <p class="project-card-description">
+              Year-long capstone design project designing an integrated offshore-onshore green ammonia plant producing urea and ethanolamines. Covered process route selection across competing technologies, mass and energy balances in GAMS, heat integration and pinch analysis in ASPEN Plus, full LCA and GHG accounting, HAZOP and process safety review, and techno-economic analysis with NPV and IRR evaluation.
+            </p>
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">ASPEN Plus</span>
+              <span class="project-tag">GAMS</span>
+              <span class="project-tag">LCA</span>
+              <span class="project-tag">TEA</span>
+              <span class="project-tag">Process Safety</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card-title">Warframe Mastery Tracker</h3>
+            <p class="project-card-description">
+              A browser-based progress tracker for a live game with 1,000+ tracked 
+              items across dozens of categories.
+              Pulls and reconciles data from multiple community APIs, stores it in a structured
+              JSON database that expands dynamically as the game updates. Audit function
+              continuously validates the filtered dataset against category-level targets, 
+              catching discrepancies automatically as new content is added. Includes custom 
+              XP calculations, extensive filtering logic, and full import/export with no 
+              server-side storage. Built to handle real data complexity.
+            </p>
+            <div class="project-links">
+              <a href="https://arkodxs.github.io/warframe-mastery-tracker" target="_blank" rel="noopener" class="project-link">Try demo</a>
+              <a href="https://github.com/arkodxs/warframe-mastery-tracker" target="_blank" rel="noopener" class="project-link">View source</a>
+            </div>
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">IndexedDB</span>
+              <span class="project-tag">APIs</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="tools" class="section">
+        <h2>Tools &amp; Methods</h2>
+        <div class="methods-grid">
+          <article class="methods-card">
+            <h3 class="methods-card-title">Process Simulation &amp; Design</h3>
+            <p class="methods-card-description">ASPEN Plus, gPROMS, GAMS - used for flowsheet simulation, heat integration, optimisation, and mass/energy balancing across industrial-scale process design projects.</p>
+          </article>
+
+          <article class="methods-card">
+            <h3 class="methods-card-title">Data &amp; Code</h3>
+            <p class="methods-card-description">Python (Pandas, Dash, SQLite, REST APIs), MATLAB - used for data analysis, visualisation, pipeline building, and experimental data processing.</p>
+          </article>
+
+          <article class="methods-card">
+            <h3 class="methods-card-title">Sustainability Analysis</h3>
+            <p class="methods-card-description">LCA, GHG Protocol Scope 1–3, TEA - applied across process design and hackathon work to quantify environmental impact and commercial viability.</p>
+          </article>
+
+          <article class="methods-card">
+            <h3 class="methods-card-title">Lab &amp; Experimental</h3>
+            <p class="methods-card-description">PEM fuel cell characterisation, sensor fabrication, soft composite materials - hands-on experimental work across hydrogen systems and materials testing.</p>
+          </article>
+        </div>
       </section>
 
       <section id="skills" class="section">
         <h2>Skills</h2>
       </section>
 
-      <section id="contact" class="section">
-        <h2>Contact</h2>
+      <section id="contact" class="section closing-section">
+        <h2>Closing</h2>
+        <p class="section-secondary-text closing-text">
+          Currently open to summer placements and research opportunities in energy and process engineering.
+        </p>
+        <a class="cv-download-link" href="Arko-Das-CV.pdf" download>Download CV</a>
       </section>
     </main>
+
+    <div id="process-tooltip" class="process-tooltip" aria-hidden="true"></div>
+
+    <script>
+      const tooltip = document.getElementById('process-tooltip');
+      const bfdInline = document.getElementById('bfd-inline');
+
+      const labelTooltipMap = [
+        {
+          match: /Electrochemical|Reactor/i,
+          text: `
+            <strong>Electrochemical Reactor</strong><br><br>
+            <em>Reaction:</em><br> SO₂ + 2H₂O → H₂SO₄ + H₂<br><br>
+            Cell potential: <strong>0.17V</strong> vs 1.23V for water electrolysis, lower energy requirements<br><br>
+            Catalyst: Platinum mesh<br><br>
+            Target: 30 wt% H₂SO₄ - balance of SO₂ solubility and conductivity<br>
+            Conversion: 95% (literature)<br><br>
+            <em>Sizing:</em><br>
+            Flue gas: Assumed 200,000 m³/hr @ 1,000 ppm SO2, typical of heavy fuel oils, which produce the majority of flue gases<br><br>  
+            Liquid: 1,000 L/hr · Volume: 100 m³<br>
+            Liquid / Gas Ratio : 0.005, based off similar reactors when scaled 
+          `,
+        },
+        {
+          match: /Neutralisation|Tank/i,
+          text: `
+            <strong>Neutralisation Tank</strong><br><br>
+            <em>Reaction:</em><br> H₂SO₄ + 2KOH → K₂SO₄ + 2H₂O<br><br>
+            · KOH chosen over NaOH - potassium sulphate (K₂SO₄) is a more desirable product due to potassium content<br><br>
+            KOH fed with ~2% molar excess<br>
+            · Residence time: 15 minutes<br>
+            · Reaction assumed complete (strong acid-base)<br><br>
+            <em>Side reaction risk:</em><br>
+            SO₂ + 2KOH → K₂SO₃ - minimised by high upstream SO₂ conversion
+          `,
+        },
+        {
+          match: /Forced Circulation|Evaporator/i,
+          text: `
+            <strong>Forced Circulation Evaporator</strong><br><br>
+            · Concentrates dilute K₂SO₄ prior to crystallisation to reduce sizing requirements and costs<br><br>
+            · Forced circulation handles sulphate scaling tendency<br><br>
+            · Reduced pressure lowers boiling point → lower energy demand.<br><br>
+            · Scale minimised to reduce safety risks of vaccum vessesls and maintain high heat transfer coefficients
+          `,
+        },
+        {
+          match: /Crystalliser/i,
+          text: `
+            <strong>MVR Crystalliser</strong><br><br>
+            Product: K₂SO₄ at >98 wt% purity<br><br>
+            · MVR recompresses vapour as heat source → reduced external energy demand<br><br>
+            · Water recovered at base for process recycle<br><br>
+            *MVR = Mechanical Vapour Recompression
+          `,
+        },
+      ];
+
+      function normalizeText(value) {
+        return value.replace(/\s+/g, ' ').trim();
+      }
+
+      function showTooltip(event) {
+        tooltip.innerHTML = event.currentTarget.dataset.tooltip || '';
+        tooltip.classList.add('is-visible');
+        tooltip.style.left = `${event.clientX + 14}px`;
+        tooltip.style.top = `${event.clientY + 14}px`;
+        tooltip.setAttribute('aria-hidden', 'false');
+      }
+
+      function moveTooltip(event) {
+        if (!tooltip.classList.contains('is-visible')) return;
+        tooltip.style.left = `${event.clientX + 14}px`;
+        tooltip.style.top = `${event.clientY + 14}px`;
+      }
+
+      function hideTooltip() {
+        tooltip.classList.remove('is-visible');
+        tooltip.setAttribute('aria-hidden', 'true');
+      }
+
+      function bindTooltipTargets(root) {
+        root.querySelectorAll('[data-tooltip]').forEach((target) => {
+          target.addEventListener('mouseenter', showTooltip);
+          target.addEventListener('mousemove', moveTooltip);
+          target.addEventListener('mouseleave', hideTooltip);
+        });
+      }
+
+      function annotateSvgTooltips(svg) {
+        svg.querySelectorAll('text').forEach((textNode) => {
+          const label = normalizeText(textNode.textContent || '');
+          const match = labelTooltipMap.find((entry) => entry.match.test(label));
+
+          if (!match) {
+            return;
+          }
+
+          textNode.dataset.tooltip = match.text;
+          textNode.classList.add('tooltip-anchor');
+        });
+
+        bindTooltipTargets(svg);
+      }
+
+      async function loadBfdSvg() {
+        try {
+          const response = await fetch('Aramco-BFD.svg');
+          if (!response.ok) {
+            throw new Error(`SVG request failed with ${response.status}`);
+          }
+
+          const svgText = await response.text();
+          bfdInline.innerHTML = svgText;
+
+          const svg = bfdInline.querySelector('svg');
+          if (!svg) {
+            return;
+          }
+
+          svg.classList.add('bfd-svg');
+          svg.setAttribute('viewBox', '0 0 4305 1645');
+          svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+          svg.removeAttribute('width');
+          svg.removeAttribute('height');
+
+          annotateSvgTooltips(svg);
+        } catch (error) {
+          bfdInline.textContent = 'The process diagram could not be loaded.';
+        }
+      }
+
+      loadBfdSvg();
+    </script>
   </body>
 </html>
