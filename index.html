@@ -16,10 +16,23 @@
     <main class="page">
       <section id="hero" class="section hero">
         <h1 class="hero-name">Arko Das</h1>
-        <p class="hero-subtitle">MEng Chemical Engineering at UCL | Hydrogen &amp; Clean Energy | Process Design</p>
+        <p class="hero-subtitle">
+          MEng Chemical Engineering at UCL | Hydrogen &amp; Clean Energy |
+          Process Design
+        </p>
         <p class="hero-links">
-          <a href="https://www.linkedin.com/in/arkoadas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/arkodxs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/arkoadas/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/arkodxs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
           <a href="mailto:arko.a.das@gmail.com">arko.a.das@gmail.com</a>
         </p>
       </section>
@@ -27,25 +40,54 @@
       <section id="about" class="section">
         <h2>About</h2>
         <p class="section-secondary-text">
-          Third-year MEng Chemical Engineering at UCL. I characterise hydrogen fuel cell systems for UCL Racing, design green chemical processes, and build data tools - sometimes all in the same week. I care about the people side of engineering as much as the technical side, which is why I run events and infrastructure for the Ramsay Society alongside the lab work.
+          Third-year MEng Chemical Engineering at UCL. I characterise hydrogen
+          fuel cell systems for UCL Racing, design green chemical processes, and
+          build data tools - sometimes all in the same week. I care about the
+          people side of engineering as much as the technical side, which is why
+          I run events and infrastructure for the Ramsay Society alongside the
+          lab work.
         </p>
       </section>
 
       <section id="projects" class="section">
         <h2>Projects</h2>
         <div class="project-grid">
-          <article class="project-card project-card--wide project-card--ecothon">
-            <h3 class="project-card-title">SO₂ Emissions Abatement - Aramco Ecothon 2026</h3>
+          <article
+            class="project-card project-card--wide project-card--ecothon"
+          >
+            <h3 class="project-card-title">
+              SO₂ Emissions Abatement - Aramco Ecothon 2026
+            </h3>
             <p class="project-card-description">
-              Led the process design of a modular electrochemical process converting industrial SO₂ emissions into green hydrogen and potassium sulphate fertiliser in a 3-day competition. The core innovation exploits SO₂ as a depolariser, reducing the electrolyser cell potential from 1.23V (water splitting) to 0.17V, dramatically reducing energy demand relative to conventional water electrolysis. The team's techno-economic model techno-economic model projected £18M NPV and 17% ROI. Won 1st place at the Aramco Ecothon, competing against 15 teams.
+              Led the process design of a modular electrochemical process
+              converting industrial SO₂ emissions into green hydrogen and
+              potassium sulphate fertiliser in a 3-day competition. The core
+              innovation exploits SO₂ as a depolariser, reducing the
+              electrolyser cell potential from 1.23V (water splitting) to 0.17V,
+              dramatically reducing energy demand relative to conventional water
+              electrolysis. The team's techno-economic model techno-economic
+              model projected £18M NPV and 17% ROI. Won 1st place at the Aramco
+              Ecothon, competing against 15 teams.
             </p>
-            <p class="project-card-caption">Hover over each block's name to see the engineering decisions behind it.</p>
+            <p class="project-card-caption">
+              Hover over each block's name to see the engineering decisions
+              behind it.
+            </p>
 
             <div class="diagram-wrap">
-              <div id="bfd-inline" class="bfd-inline" aria-label="Aramco BFD diagram"></div>
+              <div
+                id="bfd-inline"
+                class="bfd-inline"
+                aria-label="Aramco BFD diagram"
+              ></div>
             </div>
-            
-            <a href="ecothon-presentation.pdf" target="_blank" class="cv-download-link">View Presentation</a>
+
+            <a
+              href="ecothon-presentation.pdf"
+              target="_blank"
+              class="cv-download-link"
+              >View Presentation</a
+            >
 
             <div class="project-tags" aria-label="Project tags">
               <span class="project-tag">Electrochemistry</span>
@@ -55,10 +97,358 @@
             </div>
           </article>
 
-          <article class="project-card">
-            <h3 class="project-card-title">Hydrogen Fuel Cell Characterisation - UCL Racing</h3>
+          <article class="project-card project-card--wide">
+            <h3 class="project-card-title">
+              CO₂ Ammonia Stripper — Design Decisions
+            </h3>
             <p class="project-card-description">
-              Hydrogen systems engineer for UCL Racing's Shell Eco-marathon team, working on a Horizon H-200 PEM fuel cell stack. Characterised hydrogen utilisation efficiency across operating conditions, ran sensitivity analyses on controllable system parameters, and improved overall system efficiency by 23%. Part of the first UK team to complete the Shell Hypermile hydrogen fuel cell challenge, scoring 364 km/m³ and placing 1st in Carbon Footprint.
+              Part of a year-long UCL capstone designing an integrated
+              offshore-onshore green ammonia plant covering process route
+              selection, heat integration, LCA, TEA, and HAZOP. My individual
+              design unit was a high-pressure falling-film CO₂ stripper
+              for the urea synthesis loop, designed to decompose ammonium carbamate intermediate and
+              recover ammonia, at 152 bar and 182°C. Here are five decisions from my
+              design process, each grounded in hard-earned simulation data from hundreds of parametric studies carried out in ASPEN Plus.
+            </p>
+
+            <!-- DECISION 01 -->
+            <details class="ud-decision">
+              <summary class="ud-decision-summary">
+                <span class="ud-decision-label"
+                  >Decision 01 - Thermodynamic model</span
+                >
+                <span class="ud-decision-title"
+                  >SR-Polar selected over ENRTL-RK</span
+                >
+              </summary>
+              <p class="ud-decision-body">
+                Both models were validated against three experimental datasets:
+                water-urea density at high pressure, NH₃-water and CO₂-water
+                phase equilibria, and equilibrium urea and carbamate conversion.
+                SR-Polar won on all three — most critically, ENRTL-RK
+                overestimated CO₂ solubility in water by a factor of 10, which
+                would have directly corrupted the stripping driving force
+                calculation. At 19 mol% urea, SR-Polar's density error was
+                0.66% versus 3.42% for ENRTL-RK. This choice underpinned
+                everything downstream: McCabe-Thiele hand sizing, the RADFRAC
+                simulation, and the parametric sensitivity analysis.
+              </p>
+
+              <div class="ud-stat-row">
+                <div class="ud-stat">
+                  <span class="ud-stat-value ud-stat-good">0.66%</span>
+                  <span class="ud-stat-label">SR-Polar max deviation</span>
+                </div>
+                <div class="ud-stat">
+                  <span class="ud-stat-value ud-stat-bad">3.42%</span>
+                  <span class="ud-stat-label">ENRTL-RK max deviation</span>
+                </div>
+                <div class="ud-stat">
+                  <span class="ud-stat-value">19 mol%</span>
+                  <span class="ud-stat-label">urea at stripper conditions</span>
+                </div>
+              </div>
+
+              <div class="ud-chart-wrap">
+                <p class="ud-chart-label">
+                  % deviation from experiment vs urea mole fraction
+                </p>
+                <div>
+                  <canvas
+                    id="modelChart"
+                    role="img"
+                    aria-label="Line chart comparing density prediction error of SR-Polar and ENRTL-RK across urea concentrations. SR-Polar stays below 2%, ENRTL-RK exceeds 3% at high concentrations."
+                    >SR-Polar error 0.66–1.87%. ENRTL-RK error
+                    1.96–3.42%.</canvas
+                  >
+                </div>
+                <div class="ud-legend">
+                  <span class="ud-legend-item"
+                    ><span class="ud-legend-swatch"></span>SR-Polar</span
+                  >
+                  <span class="ud-legend-item"
+                    ><span
+                      class="ud-legend-swatch ud-legend-swatch--dashed"
+                    ></span
+                    >ENRTL-RK</span
+                  >
+                </div>
+              </div>
+            </details>
+
+            <div class="ud-divider"></div>
+
+            <!-- DECISION 02 -->
+            <details class="ud-decision">
+              <summary class="ud-decision-summary">
+                <span class="ud-decision-label"
+                  >Decision 02 - Column stage count</span
+                >
+                <span class="ud-decision-title"
+                  >8 stages chosen over 9 or 12</span
+                >
+              </summary>
+              <p class="ud-decision-body">
+                A parametric sweep across 4, 7, 8, 9, and 12 equilibrium stages
+                at fixed heat duty showed sharply diminishing returns past 8.
+                The jump from 4 to 8 stages gave a significant efficiency gain;
+                adding 4 more stages to reach 12 gave a fraction of that
+                improvement. 8 stages satisfies the design requirement while
+                keeping the column height and Safurex® tube cost within reason.
+              </p>
+
+              <div class="ud-chart-wrap">
+                <p class="ud-chart-label">
+                  Stripping efficiency vs stage count (at Q = 0.928 MW, CO₂ = 60
+                  kmol/hr)
+                </p>
+                <div>
+                  <canvas
+                    id="stagesChart"
+                    role="img"
+                    aria-label="Bar chart of stripping efficiency at stage counts 4, 7, 8, 9, 12. Efficiency rises sharply to 8 stages then levels off."
+                    >Approximate efficiencies: 4 stages 58%, 7 stages 67%, 8
+                    stages 70%, 9 stages 71%, 12 stages 73%.</canvas
+                  >
+                </div>
+              </div>
+            </details>
+
+            <div class="ud-divider"></div>
+
+            <!-- DECISION 03 -->
+            <details class="ud-decision">
+              <summary class="ud-decision-summary">
+                <span class="ud-decision-label"
+                  >Decision 03 - Operating point</span
+                >
+                <span class="ud-decision-title"
+                  >60 kmol/hr CO₂, 0.16 MW/stage</span
+                >
+              </summary>
+              <p class="ud-decision-body">
+                The full sensitivity analysis over CO₂ flow rate and heat duty
+                showed both variables increase efficiency roughly linearly with
+                no strong interaction. The chosen operating point sits at the
+                knee of diminishing returns on the CO₂ axis, while keeping the
+                liquid film temperature 8°C below the biuret formation threshold
+                at 190°C.
+              </p>
+              <div class="ud-stat-row">
+                <div class="ud-stat">
+                  <span class="ud-stat-value">60 kmol/hr</span>
+                  <span class="ud-stat-label">CO₂ strip gas flow rate</span>
+                </div>
+                <div class="ud-stat">
+                  <span class="ud-stat-value">0.16 MW</span>
+                  <span class="ud-stat-label">heat duty per stage</span>
+                </div>
+                <div class="ud-stat">
+                  <span class="ud-stat-value">73.1%</span>
+                  <span class="ud-stat-label"
+                    >stripping efficiency achieved</span
+                  >
+                </div>
+              </div>
+              <div class="ud-chart-wrap">
+                <p class="ud-chart-label">
+                  Stripping efficiency (%) - CO₂ flow rate vs heat duty per
+                  stage. Chosen operating point marked.
+                </p>
+                <div id="surfacePlot"></div>
+              </div>
+            </details>
+
+            <div class="ud-divider"></div>
+
+            <!-- DECISION 04 -->
+            <details class="ud-decision">
+              <summary class="ud-decision-summary">
+                <span class="ud-decision-label"
+                  >Decision 04 - Thermal limitation</span
+                >
+                <span class="ud-decision-title"
+                  >Pushing harder makes decomposition worse</span
+                >
+              </summary>
+              <p class="ud-decision-body">
+                Varying the NH₃ vaporisation efficiency revealed a
+                counter-intuitive result: higher stripping efficiency
+                simultaneously reduces carbamate decomposition. More aggressive
+                vaporisation removes heat from the liquid film, cooling it and
+                suppressing the endothermic decomposition reaction. This thermal
+                coupling is why the original 80% stripping target was abandoned
+                - reaching it would require excess heat that risks biuret
+                formation at 190°C, only 8°C above the design temperature.
+              </p>
+              <div class="ud-chart-wrap">
+                <p class="ud-chart-label">
+                  Effect of NH₃ vaporisation efficiency on stripping and
+                  decomposition
+                </p>
+                <div>
+                  <canvas
+                    id="thermalChart"
+                    role="img"
+                    aria-label="Two lines diverging as NH3 vaporisation efficiency increases: stripping efficiency rises while carbamate decomposition falls."
+                    >Stripping rises from 70.0% to 73.5%. Decomposition falls
+                    from 89.6% to 89.4% across NH3 efficiency 1.2 to
+                    1.7.</canvas
+                  >
+                </div>
+                <div class="ud-legend">
+                  <span class="ud-legend-item"
+                    ><span class="ud-legend-swatch"></span>stripping efficiency</span
+                  >
+                  <span class="ud-legend-item"
+                    ><span
+                      class="ud-legend-swatch ud-legend-swatch--dashed"
+                    ></span
+                    >carbamate decomposition</span
+                  >
+                </div>
+              </div>
+            </details>
+
+            <div class="ud-divider"></div>
+
+            <!-- DECISION 05 -->
+            <details class="ud-decision">
+              <summary class="ud-decision-summary">
+                <span class="ud-decision-label">Decision 05 - Column sizing & steam utility</span>
+                <span class="ud-decision-title">MP steam and 10m tubes at 7.5m heated length</span>
+              </summary>
+              <p class="ud-decision-body">
+                Three steam utilities were evaluated. LP steam is physically
+                impossible at these conditions - the saturation temperature is
+                below the process temperature giving a negative driving force.
+                HP steam delivers more than enough heat but the 91°C temperature
+                difference risks local overheating of the liquid film, accelerating
+                corrosion of the Safurex® tubes and promoting biuret formation.
+                MP steam at 19 barg gives a controlled 29°C ΔT, preventing hot
+                spots while delivering the full 0.96 MW across 13 m² of transfer
+                area. The overall heat transfer coefficient of 2.5 kW/m²K was
+                taken from Stamicarbon plant data for Safurex® tubing, which
+                accounts for the urea solution film resistance.
+              </p>
+
+              <div class="ud-steam-table">
+                <div class="ud-steam-col ud-steam-col--rejected">
+                  <p class="ud-steam-utility">LP steam</p>
+                  <p class="ud-steam-pressure">2 barg · 120°C</p>
+                  <div class="ud-steam-divider"></div>
+                  <p class="ud-steam-row"><span>ΔT</span><span class="ud-steam-bad">−63°C</span></p>
+                  <p class="ud-steam-row"><span>area</span><span>-</span></p>
+                  <p class="ud-steam-row"><span>tubes</span><span>-</span></p>
+                  <p class="ud-steam-verdict ud-steam-verdict--bad">impossible</p>
+                </div>
+                <div class="ud-steam-col ud-steam-col--selected">
+                  <p class="ud-steam-utility">MP steam</p>
+                  <p class="ud-steam-pressure">19 barg · 212°C</p>
+                  <div class="ud-steam-divider"></div>
+                  <p class="ud-steam-row"><span>ΔT</span><span class="ud-steam-good">+29°C</span></p>
+                  <p class="ud-steam-row"><span>area</span><span>13 m²</span></p>
+                  <p class="ud-steam-row"><span>tubes</span><span>35</span></p>
+                  <p class="ud-steam-verdict ud-steam-verdict--good">selected</p>
+                </div>
+                <div class="ud-steam-col ud-steam-col--rejected">
+                  <p class="ud-steam-utility">HP steam</p>
+                  <p class="ud-steam-pressure">41 barg · 274°C</p>
+                  <div class="ud-steam-divider"></div>
+                  <p class="ud-steam-row"><span>ΔT</span><span>+91°C</span></p>
+                  <p class="ud-steam-row"><span>area</span><span>4.2 m²</span></p>
+                  <p class="ud-steam-row"><span>tubes</span><span>12</span></p>
+                  <p class="ud-steam-verdict ud-steam-verdict--bad">hot spot risk</p>
+                </div>
+              </div>
+
+              <p class="ud-decision-body" style="margin-top: 1rem;">
+                10m tubes were chosen over 6m for a better height equivalent to
+                a theoretical plate of 1.25m and longer residence time for
+                decomposition. Only the 6 intermediate stages are heated -
+                the top and bottom stages are unheated to avoid overheating at
+                the feed and product ends - giving a 7.5m heated contact length
+                per tube.
+              </p>
+
+              <div class="ud-stat-row">
+                <div class="ud-stat">
+                  <span class="ud-stat-value">35</span>
+                  <span class="ud-stat-label">tubes (+20% margin)</span>
+                </div>
+                <div class="ud-stat">
+                  <span class="ud-stat-value">0.09 kg/s</span>
+                  <span class="ud-stat-label">liquid per tube</span>
+                </div>
+                <div class="ud-stat">
+                  <span class="ud-stat-value">0.36 m/s</span>
+                  <span class="ud-stat-label">gas velocity per tube</span>
+                </div>
+                <div class="ud-stat">
+                  <span class="ud-stat-value">1.25 m</span>
+                  <span class="ud-stat-label">HETP</span>
+                </div>
+              </div>
+            </details>
+
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">ASPEN Plus</span>
+              <span class="project-tag">RADFRAC</span>
+              <span class="project-tag">Parametric Sensitivity</span>
+              <span class="project-tag">Urea Synthesis</span>
+              <span class="project-tag">Process Safety</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card-title">Warframe Mastery Tracker</h3>
+            <p class="project-card-description">
+              A browser-based progress tracker for a live game with 1,000+
+              tracked items across dozens of categories. Pulls and reconciles
+              data from multiple community APIs, stores it in a structured JSON
+              database that expands dynamically as the game updates. Audit
+              function continuously validates the filtered dataset against
+              category-level targets, catching discrepancies automatically as
+              new content is added. Includes custom XP calculations, extensive
+              filtering logic, and full import/export with no server-side
+              storage. Built to handle real data complexity.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://arkodxs.github.io/warframe-mastery-tracker"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                >Try demo</a
+              >
+              <a
+                href="https://github.com/arkodxs/warframe-mastery-tracker"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                >View source</a
+              >
+            </div>
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">IndexedDB</span>
+              <span class="project-tag">APIs</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card-title">
+              Hydrogen Fuel Cell Characterisation - UCL Racing
+            </h3>
+            <p class="project-card-description">
+              Hydrogen systems engineer for UCL Racing's Shell Eco-marathon
+              team, working on a Horizon H-200 PEM fuel cell stack.
+              Characterised hydrogen utilisation efficiency across operating
+              conditions, ran sensitivity analyses on controllable system
+              parameters, and improved overall system efficiency by 23%. Part of
+              the first UK team to complete the Shell Hypermile hydrogen fuel
+              cell challenge, scoring 364 km/m³ and placing 1st in Carbon
+              Footprint.
             </p>
             <div class="project-tags" aria-label="Project tags">
               <span class="project-tag">Python</span>
@@ -69,42 +459,6 @@
             </div>
           </article>
 
-          <article class="project-card">
-            <h3 class="project-card-title">Green Ammonia Process Design - UCL Capstone</h3>
-            <p class="project-card-description">
-              Year-long capstone design project designing an integrated offshore-onshore green ammonia plant producing urea and ethanolamines. Covered process route selection, mass and energy balances in GAMS, heat integration and pinch analysis in ASPEN Plus, full LCA and GHG accounting, HAZOP and process safety review, and techno-economic analysis with NPV and IRR evaluation. Individually designed a high-pressure falling-film CO₂ stripper for the urea synthesis loop, validating reactive equilibria, optimising separation performance, and applying P&ID, control systems design, and layer of protection analysis to ensure process safety.
-            </p>
-            <div class="project-tags" aria-label="Project tags">
-              <span class="project-tag">ASPEN Plus</span>
-              <span class="project-tag">GAMS</span>
-              <span class="project-tag">LCA</span>
-              <span class="project-tag">TEA</span>
-              <span class="project-tag">Process Safety</span>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <h3 class="project-card-title">Warframe Mastery Tracker</h3>
-            <p class="project-card-description">
-              A browser-based progress tracker for a live game with 1,000+ tracked 
-              items across dozens of categories.
-              Pulls and reconciles data from multiple community APIs, stores it in a structured
-              JSON database that expands dynamically as the game updates. Audit function
-              continuously validates the filtered dataset against category-level targets, 
-              catching discrepancies automatically as new content is added. Includes custom 
-              XP calculations, extensive filtering logic, and full import/export with no 
-              server-side storage. Built to handle real data complexity.
-            </p>
-            <div class="project-links">
-              <a href="https://arkodxs.github.io/warframe-mastery-tracker" target="_blank" rel="noopener" class="project-link">Try demo</a>
-              <a href="https://github.com/arkodxs/warframe-mastery-tracker" target="_blank" rel="noopener" class="project-link">View source</a>
-            </div>
-            <div class="project-tags" aria-label="Project tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">IndexedDB</span>
-              <span class="project-tag">APIs</span>
-            </div>
-          </article>
         </div>
       </section>
 
@@ -113,39 +467,58 @@
         <div class="methods-grid">
           <article class="methods-card">
             <h3 class="methods-card-title">Process Simulation &amp; Design</h3>
-            <p class="methods-card-description">ASPEN Plus, gPROMS, GAMS/py - used for flowsheet simulation, from preliminary balancing calculations to heat integration and optimisation, across industrial-scale process design projects.</p>
+            <p class="methods-card-description">
+              ASPEN Plus, gPROMS, GAMS/py - used for flowsheet simulation, from
+              preliminary balancing calculations to heat integration and
+              optimisation, across industrial-scale process design projects.
+            </p>
           </article>
 
           <article class="methods-card">
             <h3 class="methods-card-title">Data &amp; Code</h3>
-            <p class="methods-card-description">Python (Pandas, Dash, SQLite, REST APIs), MATLAB - used for data analysis, visualisation, pipeline building, and experimental data processing.</p>
+            <p class="methods-card-description">
+              Python (Pandas, Dash, SQLite, REST APIs), MATLAB - used for data
+              analysis, visualisation, pipeline building, and experimental data
+              processing.
+            </p>
           </article>
 
           <article class="methods-card">
             <h3 class="methods-card-title">Sustainability Analysis</h3>
-            <p class="methods-card-description">LCA, GHG Protocol Scope 1-3, TEA - applied across capstone project and hackathon work to quantify environmental impact and commercial viability.</p>
+            <p class="methods-card-description">
+              LCA, GHG Protocol Scope 1-3, TEA - applied across capstone project
+              and hackathon work to quantify environmental impact and commercial
+              viability.
+            </p>
           </article>
 
           <article class="methods-card">
             <h3 class="methods-card-title">Lab &amp; Experimental</h3>
-            <p class="methods-card-description">PEM fuel cell characterisation, sensor fabrication, soft composite materials - hands-on experimental work across hydrogen systems and materials testing.</p>
+            <p class="methods-card-description">
+              PEM fuel cell characterisation, sensor fabrication, soft composite
+              materials - hands-on experimental work across hydrogen systems and
+              materials testing.
+            </p>
           </article>
         </div>
       </section>
 
       <section id="contact" class="section closing-section">
         <p class="section-secondary-text closing-text">
-          Currently open to summer placements and research opportunities in energy and process engineering.
+          Currently open to summer placements and research opportunities in
+          energy and process engineering.
         </p>
-        <a class="cv-download-link" href="Arko-Das-CV.pdf" download>Download CV</a>
+        <a class="cv-download-link" href="Arko-Das-CV.pdf" download
+          >Download CV</a
+        >
       </section>
     </main>
 
     <div id="process-tooltip" class="process-tooltip" aria-hidden="true"></div>
 
     <script>
-      const tooltip = document.getElementById('process-tooltip');
-      const bfdInline = document.getElementById('bfd-inline');
+      const tooltip = document.getElementById("process-tooltip");
+      const bfdInline = document.getElementById("bfd-inline");
 
       const labelTooltipMap = [
         {
@@ -199,47 +572,49 @@
       ];
 
       function normalizeText(value) {
-        return value.replace(/\s+/g, ' ').trim();
+        return value.replace(/\s+/g, " ").trim();
       }
 
       function showTooltip(event) {
-        tooltip.innerHTML = event.currentTarget.dataset.tooltip || '';
-        tooltip.classList.add('is-visible');
+        tooltip.innerHTML = event.currentTarget.dataset.tooltip || "";
+        tooltip.classList.add("is-visible");
         tooltip.style.left = `${event.clientX + 14}px`;
         tooltip.style.top = `${event.clientY + 14}px`;
-        tooltip.setAttribute('aria-hidden', 'false');
+        tooltip.setAttribute("aria-hidden", "false");
       }
 
       function moveTooltip(event) {
-        if (!tooltip.classList.contains('is-visible')) return;
+        if (!tooltip.classList.contains("is-visible")) return;
         tooltip.style.left = `${event.clientX + 14}px`;
         tooltip.style.top = `${event.clientY + 14}px`;
       }
 
       function hideTooltip() {
-        tooltip.classList.remove('is-visible');
-        tooltip.setAttribute('aria-hidden', 'true');
+        tooltip.classList.remove("is-visible");
+        tooltip.setAttribute("aria-hidden", "true");
       }
 
       function bindTooltipTargets(root) {
-        root.querySelectorAll('[data-tooltip]').forEach((target) => {
-          target.addEventListener('mouseenter', showTooltip);
-          target.addEventListener('mousemove', moveTooltip);
-          target.addEventListener('mouseleave', hideTooltip);
+        root.querySelectorAll("[data-tooltip]").forEach((target) => {
+          target.addEventListener("mouseenter", showTooltip);
+          target.addEventListener("mousemove", moveTooltip);
+          target.addEventListener("mouseleave", hideTooltip);
         });
       }
 
       function annotateSvgTooltips(svg) {
-        svg.querySelectorAll('text').forEach((textNode) => {
-          const label = normalizeText(textNode.textContent || '');
-          const match = labelTooltipMap.find((entry) => entry.match.test(label));
+        svg.querySelectorAll("text").forEach((textNode) => {
+          const label = normalizeText(textNode.textContent || "");
+          const match = labelTooltipMap.find((entry) =>
+            entry.match.test(label),
+          );
 
           if (!match) {
             return;
           }
 
           textNode.dataset.tooltip = match.text;
-          textNode.classList.add('tooltip-anchor');
+          textNode.classList.add("tooltip-anchor");
         });
 
         bindTooltipTargets(svg);
@@ -247,7 +622,7 @@
 
       async function loadBfdSvg() {
         try {
-          const response = await fetch('Aramco-BFD.svg');
+          const response = await fetch("Aramco-BFD.svg");
           if (!response.ok) {
             throw new Error(`SVG request failed with ${response.status}`);
           }
@@ -255,24 +630,394 @@
           const svgText = await response.text();
           bfdInline.innerHTML = svgText;
 
-          const svg = bfdInline.querySelector('svg');
+          const svg = bfdInline.querySelector("svg");
           if (!svg) {
             return;
           }
 
-          svg.classList.add('bfd-svg');
-          svg.setAttribute('viewBox', '0 0 4305 1645');
-          svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-          svg.removeAttribute('width');
-          svg.removeAttribute('height');
+          svg.classList.add("bfd-svg");
+          svg.setAttribute("viewBox", "0 0 4305 1645");
+          svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+          svg.removeAttribute("width");
+          svg.removeAttribute("height");
 
           annotateSvgTooltips(svg);
         } catch (error) {
-          bfdInline.textContent = 'The process diagram could not be loaded.';
+          bfdInline.textContent = "The process diagram could not be loaded.";
         }
       }
 
       loadBfdSvg();
+    </script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script>
+      (function () {
+        const gridColor = "rgba(232,224,208,0.08)";
+        const tickColor = "#888880";
+        const baseFont = { family: "Inter, sans-serif", size: 11 };
+
+        const sharedScaleOpts = {
+          grid: { color: gridColor },
+          ticks: { color: tickColor, font: baseFont },
+        };
+
+        /* Model comparison chart */
+        new Chart(document.getElementById("modelChart"), {
+          type: "line",
+          data: {
+            labels: ["5.7%", "8.9%", "12.6%", "16.5%", "18.7%"],
+            datasets: [
+              {
+                label: "SR-Polar",
+                data: [1.874, 1.475, 1.092, 0.798, 0.664],
+                borderColor: "#b08d57",
+                backgroundColor: "transparent",
+                borderWidth: 1.5,
+                pointRadius: 3,
+                pointBackgroundColor: "#b08d57",
+                tension: 0.3,
+              },
+              {
+                label: "ENRTL-RK",
+                data: [1.959, 1.981, 2.599, 3.147, 3.422],
+                borderColor: "#888880",
+                backgroundColor: "transparent",
+                borderWidth: 1.5,
+                borderDash: [4, 4],
+                pointRadius: 3,
+                pointStyle: "rectRot",
+                pointBackgroundColor: "#888880",
+                tension: 0.3,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "#1f1f1f",
+                borderColor: "#b08d57",
+                borderWidth: 1,
+                titleColor: "#e8e0d0",
+                bodyColor: "#888880",
+                callbacks: {
+                  label: (ctx) =>
+                    ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%`,
+                },
+              },
+            },
+            scales: {
+              x: {
+                ...sharedScaleOpts,
+                title: {
+                  display: true,
+                  text: "urea mole fraction",
+                  color: tickColor,
+                  font: baseFont,
+                },
+              },
+              y: {
+                ...sharedScaleOpts,
+                min: 0,
+                max: 4,
+                title: {
+                  display: true,
+                  text: "% deviation",
+                  color: tickColor,
+                  font: baseFont,
+                },
+                ticks: {
+                  ...sharedScaleOpts.ticks,
+                  callback: (v) => v.toFixed(1) + "%",
+                },
+              },
+            },
+          },
+        });
+
+        /* Stage count chart */
+        new Chart(document.getElementById("stagesChart"), {
+          type: "bar",
+          data: {
+            labels: [
+              "4 stages",
+              "7 stages",
+              "8 stages",
+              "9 stages",
+              "12 stages",
+            ],
+            datasets: [
+              {
+                label: "Stripping efficiency",
+                data: [59.3, 69.2, 70.7, 71.3, 72.4],
+                backgroundColor: [
+                  "#2a2a2a",
+                  "#2a2a2a",
+                  "#b08d57",
+                  "#2a2a2a",
+                  "#2a2a2a",
+                ],
+                borderColor: [
+                  "#444440",
+                  "#444440",
+                  "#b08d57",
+                  "#444440",
+                  "#444440",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "#1f1f1f",
+                borderColor: "#b08d57",
+                borderWidth: 1,
+                titleColor: "#e8e0d0",
+                bodyColor: "#888880",
+                callbacks: { label: (ctx) => ` ${ctx.parsed.y.toFixed(1)}%` },
+              },
+            },
+            scales: {
+              x: {
+                ...sharedScaleOpts,
+                ticks: { autoSkip: false, ...sharedScaleOpts.ticks },
+              },
+              y: {
+                ...sharedScaleOpts,
+                min: 50,
+                max: 78,
+                title: {
+                  display: true,
+                  text: "efficiency (%)",
+                  color: tickColor,
+                  font: baseFont,
+                },
+                ticks: { ...sharedScaleOpts.ticks, callback: (v) => v + "%" },
+              },
+            },
+          },
+        });
+        /* Surface plot */
+        const co2 = [
+          5, 11.07, 17.14, 23.21, 29.29, 35.36, 41.43, 47.5, 53.57, 59.64,
+          65.71, 71.79, 77.86, 83.93, 90,
+        ];
+        const q = [0.13, 0.1471, 0.1643, 0.1814, 0.1986, 0.2157, 0.2329, 0.25];
+        const z = [
+          [
+            49.81, 53.67, 57.21, 59.59, 61.88, 63.58, 64.89, 65.98, 66.91,
+            67.71, 68.4, 69.01, 69.54, 70.02, 70.45,
+          ],
+          [
+            50.62, 55.58, 59.2, 61.88, 63.92, 65.52, 66.8, 67.87, 68.77, 69.61,
+            70.22, 70.81, 71.33, 71.8, 72.22,
+          ],
+          [
+            54.71, 59.53, 63.03, 65.61, 67.58, 69.13, 70.37, 71.41, 72.29,
+            73.11, 73.71, 74.29, 74.81, 75.27, 75.69,
+          ],
+          [
+            58.8, 63.5, 66.88, 69.37, 71.28, 72.78, 73.98, 74.99, 75.85, 76.65,
+            77.23, 77.79, 78.29, 78.75, 79.15,
+          ],
+          [
+            62.9, 67.5, 70.76, 73.16, 75.0, 76.45, 77.61, 78.58, 79.41, 80.19,
+            80.75, 81.3, 81.79, 82.23, 82.62,
+          ],
+          [
+            67.03, 71.52, 74.67, 76.97, 78.73, 80.12, 81.24, 82.18, 82.98,
+            83.73, 84.28, 84.81, 85.28, 85.7, 86.09,
+          ],
+          [
+            71.18, 75.55, 78.57, 80.78, 82.47, 83.8, 84.87, 85.77, 86.54, 87.25,
+            87.78, 88.29, 88.75, 89.16, 89.53,
+          ],
+          [
+            75.31, 79.57, 82.46, 84.56, 86.17, 87.44, 88.46, 89.32, 90.05,
+            90.69, 91.24, 91.72, 92.15, 92.55, 92.9,
+          ],
+        ];
+
+        const surface = {
+          type: "surface",
+          x: co2,
+          y: q,
+          z: z,
+          colorscale: [
+            [0, "#1a1a1a"],
+            [0.3, "#2a2218"],
+            [0.6, "#6b5230"],
+            [1, "#b08d57"],
+          ],
+          opacity: 0.92,
+          showscale: false,
+          hovertemplate:
+            "CO₂: %{x:.1f} kmol/hr<br>Q/stage: %{y:.3f} MW<br>Efficiency: %{z:.1f}%<extra></extra>",
+        };
+
+        const operatingPoint = {
+          type: "scatter3d",
+          x: [59.64],
+          y: [0.1643],
+          z: [73.11],
+          mode: "markers+text",
+          marker: { size: 5, color: "#e8e0d0", symbol: "circle" },
+          text: ["chosen"],
+          textposition: "top center",
+          textfont: { color: "#e8e0d0", size: 10, family: "Inter, sans-serif" },
+          hovertemplate:
+            "Operating point<br>CO₂: 60 kmol/hr<br>Q: 0.16 MW/stage<br>Efficiency: 73.1%<extra></extra>",
+        };
+
+        const layout = {
+          paper_bgcolor: "transparent",
+          plot_bgcolor: "transparent",
+          margin: { l: 0, r: 0, t: 10, b: 0 },
+          scene: {
+            bgcolor: "#111111",
+            xaxis: {
+              title: {
+                text: "CO₂ (kmol/hr)",
+                font: { color: "#888880", size: 10, family: "Inter" },
+              },
+              tickfont: { color: "#888880", size: 9 },
+              gridcolor: "rgba(232,224,208,0.08)",
+              zerolinecolor: "rgba(232,224,208,0.08)",
+            },
+            yaxis: {
+              title: {
+                text: "Q/stage (MW)",
+                font: { color: "#888880", size: 10, family: "Inter" },
+              },
+              tickfont: { color: "#888880", size: 9 },
+              gridcolor: "rgba(232,224,208,0.08)",
+              zerolinecolor: "rgba(232,224,208,0.08)",
+            },
+            zaxis: {
+              title: {
+                text: "efficiency (%)",
+                font: { color: "#888880", size: 10, family: "Inter" },
+              },
+              tickfont: { color: "#888880", size: 9 },
+              gridcolor: "rgba(232,224,208,0.08)",
+              zerolinecolor: "rgba(232,224,208,0.08)",
+            },
+            camera: { eye: { x: 1.6, y: -1.6, z: 0.8 } },
+          },
+          font: { family: "Inter, sans-serif", color: "#888880" },
+        };
+
+        Plotly.newPlot("surfacePlot", [surface, operatingPoint], layout, {
+          responsive: true,
+          displayModeBar: false,
+        });
+        /* Thermal limitation chart */
+        new Chart(document.getElementById("thermalChart"), {
+          type: "line",
+          data: {
+            labels: ["1.2", "1.3", "1.4", "1.5", "1.6", "1.7"],
+            datasets: [
+              {
+                label: "stripping efficiency",
+                data: [69.96, 71.01, 71.84, 72.5, 73.05, 73.5],
+                borderColor: "#b08d57",
+                backgroundColor: "transparent",
+                borderWidth: 1.5,
+                pointRadius: 3,
+                pointBackgroundColor: "#b08d57",
+                tension: 0.3,
+                yAxisID: "y",
+              },
+              {
+                label: "carbamate decomposition",
+                data: [89.6, 89.55, 89.51, 89.48, 89.46, 89.44],
+                borderColor: "#888880",
+                backgroundColor: "transparent",
+                borderWidth: 1.5,
+                borderDash: [4, 4],
+                pointRadius: 3,
+                pointStyle: "rectRot",
+                pointBackgroundColor: "#888880",
+                tension: 0.3,
+                yAxisID: "y2",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "#1f1f1f",
+                borderColor: "#b08d57",
+                borderWidth: 1,
+                titleColor: "#e8e0d0",
+                bodyColor: "#888880",
+                callbacks: {
+                  label: (ctx) =>
+                    ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%`,
+                },
+              },
+            },
+            scales: {
+              x: {
+                ...sharedScaleOpts,
+                title: {
+                  display: true,
+                  text: "NH₃ vaporisation efficiency",
+                  color: tickColor,
+                  font: baseFont,
+                },
+              },
+              y: {
+                ...sharedScaleOpts,
+                position: "left",
+                min: 68,
+                max: 76,
+                title: {
+                  display: true,
+                  text: "stripping eff. (%)",
+                  color: "#b08d57",
+                  font: baseFont,
+                },
+                ticks: { ...sharedScaleOpts.ticks, callback: (v) => v + "%" },
+              },
+              y2: {
+                ...sharedScaleOpts,
+                position: "right",
+                min: 89.3,
+                max: 89.8,
+                title: {
+                  display: true,
+                  text: "decomposition (%)",
+                  color: "#888880",
+                  font: baseFont,
+                },
+                ticks: { ...sharedScaleOpts.ticks, callback: (v) => v + "%" },
+                grid: { drawOnChartArea: false },
+              },
+            },
+          },
+        });
+        document.querySelectorAll("details.ud-decision").forEach((el) => {
+          el.addEventListener("toggle", () => {
+            if (el.open) {
+              if (Chart.instances)
+                Object.values(Chart.instances).forEach((c) => c.resize());
+              Plotly.Plots.resize("surfacePlot");
+            }
+          });
+        });
+      })();
     </script>
   </body>
 </html>

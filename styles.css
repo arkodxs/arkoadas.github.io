@@ -309,3 +309,238 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.ud-decision {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.75rem 0;
+}
+ 
+.ud-decision-label {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #888880;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+ 
+.ud-decision-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+ 
+.ud-decision-body {
+  margin: 0;
+  color: #888880;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+ 
+.ud-divider {
+  height: 1px;
+  background: var(--divider);
+  margin: 0.25rem 0;
+}
+ 
+.ud-stat-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+ 
+.ud-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+ 
+.ud-stat-value {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+ 
+.ud-stat-value.ud-stat-good {
+  color: #b08d57;
+}
+ 
+.ud-stat-value.ud-stat-bad {
+  color: #888880;
+}
+ 
+.ud-stat-label {
+  font-size: 0.78rem;
+  color: #888880;
+}
+ 
+.ud-chart-wrap {
+  margin-top: 0.75rem;
+}
+
+.ud-chart-wrap > div:not(#surfacePlot) {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.ud-chart-wrap > div:has(> #thermalChart) {
+  height: 200px;
+}
+
+.ud-chart-wrap > #surfacePlot {
+  width: 100%;
+  height: 340px;
+}
+ 
+.ud-chart-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: #888880;
+}
+ 
+.ud-legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+ 
+.ud-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #888880;
+}
+ 
+.ud-legend-swatch {
+  width: 20px;
+  height: 2px;
+  display: inline-block;
+  background: #b08d57;
+}
+ 
+.ud-legend-swatch--dashed {
+  background: repeating-linear-gradient(
+    to right,
+    #888880 0px, #888880 4px,
+    transparent 4px, transparent 7px
+  );
+}
+
+.ud-decision summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.ud-decision summary::-webkit-details-marker {
+  display: none;
+}
+
+.ud-decision[open] summary {
+  margin-bottom: 0.75rem;
+}
+
+.ud-decision-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ud-decision summary::after {
+  content: "+";
+  color: #888880;
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.ud-decision[open] summary::after {
+  content: "−";
+}
+
+.ud-decision {
+  position: relative;
+}
+
+.ud-steam-table {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.ud-steam-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.75rem;
+  border: 1px solid var(--divider);
+}
+
+.ud-steam-col--selected {
+  border-color: #b08d57;
+}
+
+.ud-steam-col--rejected {
+  opacity: 0.5;
+}
+
+.ud-steam-utility {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e8e0d0;
+}
+
+.ud-steam-pressure {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #888880;
+}
+
+.ud-steam-divider {
+  height: 1px;
+  background: var(--divider);
+  margin: 0.25rem 0;
+}
+
+.ud-steam-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 0.82rem;
+  color: #888880;
+}
+
+.ud-steam-row span:last-child {
+  color: #e8e0d0;
+}
+
+.ud-steam-good {
+  color: #b08d57 !important;
+}
+
+.ud-steam-bad {
+  color: #888880 !important;
+}
+
+.ud-steam-verdict {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ud-steam-verdict--good {
+  color: #b08d57;
+}
+
+.ud-steam-verdict--bad {
+  color: #888880;
+}
