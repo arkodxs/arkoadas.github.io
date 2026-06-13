@@ -66,26 +66,30 @@
               electrolyser cell potential from 1.23V (water splitting) to 0.17V,
               dramatically reducing energy demand relative to conventional water
               electrolysis. The team's techno-economic model techno-economic
-              model projected £18M NPV and 17% ROI. Won 1st place at the Aramco
-              Ecothon, competing against 15 teams.
+              model projected £18M NPV and 17% ROI, with the overall proposal
+              winning 1st place at the Aramco Ecothon, competing against 15
+              teams.
             </p>
-            <p class="project-card-caption">
-              Hover over each block's name to see the engineering decisions
-              behind it.
-            </p>
-
-            <div class="diagram-wrap">
-              <div
-                id="bfd-inline"
-                class="bfd-inline"
-                aria-label="Aramco BFD diagram"
-              ></div>
-            </div>
-
+            <details class="ud-decision">
+              <summary class="ud-decision-summary">
+                <span class="ud-decision-label">Process diagram</span>
+                <span class="ud-decision-title"
+                  >Hover over a block to see the engineering decisions behind
+                  it.</span
+                >
+              </summary>
+              <div class="diagram-wrap">
+                <div
+                  id="bfd-inline"
+                  class="bfd-inline"
+                  aria-label="Aramco BFD diagram"
+                ></div>
+              </div>
+            </details>
             <a
               href="ecothon-presentation.pdf"
               target="_blank"
-              class="cv-download-link"
+              class="cv-download-link cv-download-link--tight"
               >View Presentation</a
             >
 
@@ -97,6 +101,64 @@
             </div>
           </article>
 
+          <article class="project-card">
+            <h3 class="project-card-title">Warframe Mastery Tracker</h3>
+            <p class="project-card-description">
+              A browser-based progress tracker for a live game with 1,000+
+              tracked items across dozens of categories. Pulls and reconciles
+              data from multiple community APIs, stores it in a structured JSON
+              database that expands dynamically as the game updates. Audit
+              function continuously validates the filtered dataset against
+              category-level targets, catching discrepancies automatically as
+              new content is added. Includes custom XP calculations, extensive
+              filtering logic, and full import/export with no server-side
+              storage. Built to handle real data complexity.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://arkodxs.github.io/warframe-mastery-tracker"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                >Try demo</a
+              >
+              <a
+                href="https://github.com/arkodxs/warframe-mastery-tracker"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                >View source</a
+              >
+            </div>
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">IndexedDB</span>
+              <span class="project-tag">APIs</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card-title">
+              Hydrogen Fuel Cell Characterisation - UCL Racing
+            </h3>
+            <p class="project-card-description">
+              Part of the first UK team to complete the Shell Eco-marathon
+              Hypermile hydrogen fuel cell challenge, scoring 364 km/m³ and
+              placing 1st in Carbon Footprint in 2025. Working on a Horizon
+              H-200 PEM fuel cell stack, I characterised hydrogen utilisation
+              efficiency across operating conditions, ran sensitivity analyses
+              on key system parameters, and delivered a 23% improvement in
+              overall system efficiency.
+            </p>
+            <div class="project-tags" aria-label="Project tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">MATLAB</span>
+              <span class="project-tag">Hydrogen</span>
+              <span class="project-tag">PEM Fuel Cells</span>
+              <span class="project-tag">Experimental</span>
+            </div>
+          </article>
+
           <article class="project-card project-card--wide">
             <h3 class="project-card-title">
               CO₂ Ammonia Stripper — Design Decisions
@@ -105,10 +167,12 @@
               Part of a year-long UCL capstone designing an integrated
               offshore-onshore green ammonia plant covering process route
               selection, heat integration, LCA, TEA, and HAZOP. My individual
-              design unit was a high-pressure falling-film CO₂ stripper
-              for the urea synthesis loop, designed to decompose ammonium carbamate intermediate and
-              recover ammonia, at 152 bar and 182°C. Here are five decisions from my
-              design process, each grounded in hard-earned simulation data from hundreds of parametric studies carried out in ASPEN Plus.
+              design unit was a high-pressure falling-film CO₂ stripper for the
+              urea synthesis loop, designed to decompose ammonium carbamate (a
+              water-soluble intermediate) and recover ammonia, at 152 bar and
+              182°C. Here are five decisions from my design process, each
+              grounded in hard-earned simulation data from hundreds of
+              parametric runs carried out in ASPEN Plus.
             </p>
 
             <!-- DECISION 01 -->
@@ -125,13 +189,14 @@
                 Both models were validated against three experimental datasets:
                 water-urea density at high pressure, NH₃-water and CO₂-water
                 phase equilibria, and equilibrium urea and carbamate conversion.
-                SR-Polar won on all three — most critically, ENRTL-RK
-                overestimated CO₂ solubility in water by a factor of 10, which
-                would have directly corrupted the stripping driving force
-                calculation. At 19 mol% urea, SR-Polar's density error was
-                0.66% versus 3.42% for ENRTL-RK. This choice underpinned
-                everything downstream: McCabe-Thiele hand sizing, the RADFRAC
-                simulation, and the parametric sensitivity analysis.
+                SR-Polar won on all three. Critically, ENRTL-RK overestimated
+                CO₂ solubility in water by a factor of 10, which would have
+                disrupted the accuracy of the simulation's stripping driving
+                force. At 19 mol% urea, SR-Polar's density error was 0.66%
+                versus 3.42% for ENRTL-RK, an important metric to track due to
+                it's impact on the accuracy of sizing calculations. This choice
+                underpinned everything downstream: McCabe-Thiele hand sizing,
+                the RADFRAC simulation, and the parametric sensitivity analysis.
               </p>
 
               <div class="ud-stat-row">
@@ -153,13 +218,13 @@
                 <p class="ud-chart-label">
                   % deviation from experiment vs urea mole fraction
                 </p>
-                <div>
+                <div class="ud-chart-canvas-wrap">
                   <canvas
                     id="modelChart"
                     role="img"
                     aria-label="Line chart comparing density prediction error of SR-Polar and ENRTL-RK across urea concentrations. SR-Polar stays below 2%, ENRTL-RK exceeds 3% at high concentrations."
-                    >SR-Polar error 0.66–1.87%. ENRTL-RK error
-                    1.96–3.42%.</canvas
+                    >SR-Polar error 0.66-1.87%. ENRTL-RK error
+                    1.96-3.42%.</canvas
                   >
                 </div>
                 <div class="ud-legend">
@@ -189,10 +254,11 @@
                 >
               </summary>
               <p class="ud-decision-body">
-                A parametric sweep across 4, 7, 8, 9, and 12 equilibrium stages
-                at fixed heat duty showed sharply diminishing returns past 8.
-                The jump from 4 to 8 stages gave a significant efficiency gain;
-                adding 4 more stages to reach 12 gave a fraction of that
+                A parametric study across 4, 7, 8, 9, and 12 equilibrium stages
+                at fixed heat duty (set at the estimated amount required for the
+                desired decomposition) showed sharply diminishing returns past
+                8. The jump from 4 to 8 stages gave a significant efficiency
+                gain; adding 4 more stages to reach 12 gave a fraction of that
                 improvement. 8 stages satisfies the design requirement while
                 keeping the column height and Safurex® tube cost within reason.
               </p>
@@ -202,14 +268,16 @@
                   Stripping efficiency vs stage count (at Q = 0.928 MW, CO₂ = 60
                   kmol/hr)
                 </p>
-                <div>
-                  <canvas
-                    id="stagesChart"
-                    role="img"
-                    aria-label="Bar chart of stripping efficiency at stage counts 4, 7, 8, 9, 12. Efficiency rises sharply to 8 stages then levels off."
-                    >Approximate efficiencies: 4 stages 58%, 7 stages 67%, 8
-                    stages 70%, 9 stages 71%, 12 stages 73%.</canvas
-                  >
+                <div class="ud-chart-canvas-wrap">
+                  <div>
+                    <canvas
+                      id="stagesChart"
+                      role="img"
+                      aria-label="Bar chart of stripping efficiency at stage counts 4, 7, 8, 9, 12. Efficiency rises sharply to 8 stages then levels off."
+                      >Approximate efficiencies: 4 stages 58%, 7 stages 67%, 8
+                      stages 70%, 9 stages 71%, 12 stages 73%.</canvas
+                    >
+                  </div>
                 </div>
               </div>
             </details>
@@ -272,21 +340,23 @@
                 >
               </summary>
               <p class="ud-decision-body">
-                Varying the NH₃ vaporisation efficiency revealed a
-                counter-intuitive result: higher stripping efficiency
-                simultaneously reduces carbamate decomposition. More aggressive
-                vaporisation removes heat from the liquid film, cooling it and
-                suppressing the endothermic decomposition reaction. This thermal
-                coupling is why the original 80% stripping target was abandoned
-                - reaching it would require excess heat that risks biuret
-                formation at 190°C, only 8°C above the design temperature.
+                Varying NH₃ stripping efficiency revealed a counter-intuitive
+                result: higher stripping also reduces carbamate decomposition.
+                More aggressive vaporisation removes heat from the liquid film,
+                cooling it and suppressing the endothermic decomposition
+                reaction. This coupling is why the original ambitious 80% target
+                was abandoned - the heat input required would close the margin
+                to biuret formation at 190°C, only 8°C above design temperature.
+                The final target of 72.2% was set at the point where stripping
+                performance and thermal stability are balanced, while remaining
+                well within acceptable limits from literature.
               </p>
               <div class="ud-chart-wrap">
                 <p class="ud-chart-label">
                   Effect of NH₃ vaporisation efficiency on stripping and
                   decomposition
                 </p>
-                <div>
+                <div class="ud-chart-canvas-wrap ud-chart-canvas-wrap--tall">
                   <canvas
                     id="thermalChart"
                     role="img"
@@ -298,7 +368,8 @@
                 </div>
                 <div class="ud-legend">
                   <span class="ud-legend-item"
-                    ><span class="ud-legend-swatch"></span>stripping efficiency</span
+                    ><span class="ud-legend-swatch"></span>stripping
+                    efficiency</span
                   >
                   <span class="ud-legend-item"
                     ><span
@@ -315,21 +386,26 @@
             <!-- DECISION 05 -->
             <details class="ud-decision">
               <summary class="ud-decision-summary">
-                <span class="ud-decision-label">Decision 05 - Column sizing & steam utility</span>
-                <span class="ud-decision-title">MP steam and 10m tubes at 7.5m heated length</span>
+                <span class="ud-decision-label"
+                  >Decision 05 - Column sizing & steam utility</span
+                >
+                <span class="ud-decision-title"
+                  >MP steam and 10m tubes at 7.5m heated length</span
+                >
               </summary>
               <p class="ud-decision-body">
                 Three steam utilities were evaluated. LP steam is physically
                 impossible at these conditions - the saturation temperature is
                 below the process temperature giving a negative driving force.
                 HP steam delivers more than enough heat but the 91°C temperature
-                difference risks local overheating of the liquid film, accelerating
-                corrosion of the Safurex® tubes and promoting biuret formation.
-                MP steam at 19 barg gives a controlled 29°C ΔT, preventing hot
-                spots while delivering the full 0.96 MW across 13 m² of transfer
-                area. The overall heat transfer coefficient of 2.5 kW/m²K was
-                taken from Stamicarbon plant data for Safurex® tubing, which
-                accounts for the urea solution film resistance.
+                difference risks local overheating of the liquid film,
+                accelerating corrosion of the Safurex® tubes and promoting
+                biuret formation. MP steam at 19 barg gives a controlled 29°C
+                ΔT, preventing hot spots while delivering the full 0.96 MW
+                across 13 m² of transfer area. The overall heat transfer
+                coefficient of 2.5 kW/m²K was taken from Stamicarbon plant data
+                for Safurex® tubing, which accounts for the urea solution film
+                resistance.
               </p>
 
               <div class="ud-steam-table">
@@ -337,38 +413,52 @@
                   <p class="ud-steam-utility">LP steam</p>
                   <p class="ud-steam-pressure">2 barg · 120°C</p>
                   <div class="ud-steam-divider"></div>
-                  <p class="ud-steam-row"><span>ΔT</span><span class="ud-steam-bad">−63°C</span></p>
+                  <p class="ud-steam-row">
+                    <span>ΔT</span><span class="ud-steam-bad">−63°C</span>
+                  </p>
                   <p class="ud-steam-row"><span>area</span><span>-</span></p>
                   <p class="ud-steam-row"><span>tubes</span><span>-</span></p>
-                  <p class="ud-steam-verdict ud-steam-verdict--bad">impossible</p>
+                  <p class="ud-steam-verdict ud-steam-verdict--bad">
+                    impossible
+                  </p>
                 </div>
                 <div class="ud-steam-col ud-steam-col--selected">
                   <p class="ud-steam-utility">MP steam</p>
                   <p class="ud-steam-pressure">19 barg · 212°C</p>
                   <div class="ud-steam-divider"></div>
-                  <p class="ud-steam-row"><span>ΔT</span><span class="ud-steam-good">+29°C</span></p>
-                  <p class="ud-steam-row"><span>area</span><span>13 m²</span></p>
+                  <p class="ud-steam-row">
+                    <span>ΔT</span><span class="ud-steam-good">+29°C</span>
+                  </p>
+                  <p class="ud-steam-row">
+                    <span>area</span><span>13 m²</span>
+                  </p>
                   <p class="ud-steam-row"><span>tubes</span><span>35</span></p>
-                  <p class="ud-steam-verdict ud-steam-verdict--good">selected</p>
+                  <p class="ud-steam-verdict ud-steam-verdict--good">
+                    selected
+                  </p>
                 </div>
                 <div class="ud-steam-col ud-steam-col--rejected">
                   <p class="ud-steam-utility">HP steam</p>
                   <p class="ud-steam-pressure">41 barg · 274°C</p>
                   <div class="ud-steam-divider"></div>
                   <p class="ud-steam-row"><span>ΔT</span><span>+91°C</span></p>
-                  <p class="ud-steam-row"><span>area</span><span>4.2 m²</span></p>
+                  <p class="ud-steam-row">
+                    <span>area</span><span>4.2 m²</span>
+                  </p>
                   <p class="ud-steam-row"><span>tubes</span><span>12</span></p>
-                  <p class="ud-steam-verdict ud-steam-verdict--bad">hot spot risk</p>
+                  <p class="ud-steam-verdict ud-steam-verdict--bad">
+                    hot spot risk
+                  </p>
                 </div>
               </div>
 
-              <p class="ud-decision-body" style="margin-top: 1rem;">
-                10m tubes were chosen over 6m for a better height equivalent to
-                a theoretical plate of 1.25m and longer residence time for
-                decomposition. Only the 6 intermediate stages are heated -
-                the top and bottom stages are unheated to avoid overheating at
-                the feed and product ends - giving a 7.5m heated contact length
-                per tube.
+              <p class="ud-decision-body" style="margin-top: 1rem">
+                10m tubes were chosen over 6m (typical pre-manufactured lengths)
+                for a better height equivalent to a theoretical plate of 1.25m
+                and longer residence time for decomposition. Only the 6
+                intermediate stages are heated - the top and bottom stages are
+                unheated to avoid overheating at the feed and product ends -
+                giving a 7.5m heated contact length per tube.
               </p>
 
               <div class="ud-stat-row">
@@ -399,66 +489,6 @@
               <span class="project-tag">Process Safety</span>
             </div>
           </article>
-
-          <article class="project-card">
-            <h3 class="project-card-title">Warframe Mastery Tracker</h3>
-            <p class="project-card-description">
-              A browser-based progress tracker for a live game with 1,000+
-              tracked items across dozens of categories. Pulls and reconciles
-              data from multiple community APIs, stores it in a structured JSON
-              database that expands dynamically as the game updates. Audit
-              function continuously validates the filtered dataset against
-              category-level targets, catching discrepancies automatically as
-              new content is added. Includes custom XP calculations, extensive
-              filtering logic, and full import/export with no server-side
-              storage. Built to handle real data complexity.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://arkodxs.github.io/warframe-mastery-tracker"
-                target="_blank"
-                rel="noopener"
-                class="project-link"
-                >Try demo</a
-              >
-              <a
-                href="https://github.com/arkodxs/warframe-mastery-tracker"
-                target="_blank"
-                rel="noopener"
-                class="project-link"
-                >View source</a
-              >
-            </div>
-            <div class="project-tags" aria-label="Project tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">IndexedDB</span>
-              <span class="project-tag">APIs</span>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <h3 class="project-card-title">
-              Hydrogen Fuel Cell Characterisation - UCL Racing
-            </h3>
-            <p class="project-card-description">
-              Hydrogen systems engineer for UCL Racing's Shell Eco-marathon
-              team, working on a Horizon H-200 PEM fuel cell stack.
-              Characterised hydrogen utilisation efficiency across operating
-              conditions, ran sensitivity analyses on controllable system
-              parameters, and improved overall system efficiency by 23%. Part of
-              the first UK team to complete the Shell Hypermile hydrogen fuel
-              cell challenge, scoring 364 km/m³ and placing 1st in Carbon
-              Footprint.
-            </p>
-            <div class="project-tags" aria-label="Project tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">MATLAB</span>
-              <span class="project-tag">Hydrogen</span>
-              <span class="project-tag">PEM Fuel Cells</span>
-              <span class="project-tag">Experimental</span>
-            </div>
-          </article>
-
         </div>
       </section>
 
@@ -505,8 +535,10 @@
 
       <section id="contact" class="section closing-section">
         <p class="section-secondary-text closing-text">
-          Currently open to summer placements and research opportunities in
-          energy and process engineering.
+          Open to summer placements in energy and process engineering,
+          particularly R&D and process development roles involving simulation,
+          optimisation, or experimental work. Any work involving sustainable
+          technologies and processes is of interest. ¬
         </p>
         <a class="cv-download-link" href="Arko-Das-CV.pdf" download
           >Download CV</a
