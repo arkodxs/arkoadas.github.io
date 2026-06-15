@@ -230,6 +230,12 @@ h1 {
   color: #888880;
 }
 
+.methods-card-tools {
+  color: #b08d57;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
 .diagram-wrap {
   margin-top: 0.4rem;
   overflow-x: auto;
